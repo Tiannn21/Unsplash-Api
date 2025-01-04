@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 35px;
+    border-bottom: 1px solid #E5E7EB;
+    align-items: center;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header-buttons button {
+    color: black;
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #E5E7EB;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 25px;
+    cursor: pointer;
+}

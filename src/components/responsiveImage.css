@@ -1,0 +1,16 @@
+.responsive-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .responsive-img.tall {
+    max-height: 90vh; 
+    width: auto; 
+  }
+  
+  .responsive-img.wide {
+    width: 100%; 
+    height: auto; 
+  }

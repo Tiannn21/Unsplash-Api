@@ -3,7 +3,7 @@ import { Header } from './components/Header'
 import { Photos } from './components/Photos'
 import { Home } from './components/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Photo } from './components/Photo'
+import { PhotoPage } from './components/PhotoPage'
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/photos/:search' element={<Photos/>}/>
-        <Route path='/photos/:search/:id' element={<Photo/>}/>
+        <Route path='/photos/:search/:id' element={<PhotoPage/>}/>
       </Routes>
       
     </BrowserRouter>

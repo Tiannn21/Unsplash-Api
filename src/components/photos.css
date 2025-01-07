@@ -7,39 +7,6 @@
     padding: 0;
     height: 100px;
 }
-
-.photos-label {
-    position: absolute;
-    top: 18%;
-    left: 30%;
-    display: block;
-    width: 600px;
-    border-radius: 8px;
-    border: 2px solid #E5E7EB;
-    box-shadow: 0 0 0 0 black;
-    padding: 20px 8px 20px 10px;
-    text-align: left;
-    background-color: white;
-
-    .photos-icon {
-        position: absolute;
-        top: 53%;
-        right: 0;
-        transform: translate(-50%, -50%);
-        transition: all 0.3s ease;
-        color: #c5c5c5;
-    }
-
-    .photos-input {
-        background-color: white;
-        outline: none;
-        border: none;
-        color: black;
-        font-size: 16px;
-        width: 560px;
-    }
-
-}
 .photos{
     columns: 4;
     gap: 30px;
@@ -54,7 +21,11 @@
     animation: img-reveal linear both;
     animation-timeline: view();
     animation-range: entry 30% cover 30%;
-    cursor: pointer;
+    cursor: zoom-in;
+}
+
+.photos img:hover{
+    filter: brightness(90%);
 }
 
 @keyframes img-reveal{

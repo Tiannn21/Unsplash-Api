@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import './header.css'
 
 export function Header() {
+    //const path = useLocation()
+
     return (
         <header>
             <Link to='/'>
@@ -11,7 +13,7 @@ export function Header() {
                 </svg>
             </Link>
             <div className='header-buttons'>
-                <button>Home</button>
+                <button >Home</button>
                 <button style={{ background: 'transparent' }}>Collections</button>
             </div>
 

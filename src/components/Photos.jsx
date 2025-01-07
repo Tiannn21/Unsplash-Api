@@ -1,24 +1,20 @@
 import './photos.css'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { getPhotos } from './service/service'
 
-const CLIENT_ID = 'tpbKYv-xJTtzFjPzOV5_RrHp_lJwjwK7-TI8rDsBEE0'
 
 export function Photos() {
     const firstSearch = useParams().search
     const [search, setSearch] = useState(firstSearch ? firstSearch : "")
     const [allPhotos, setAllPhotos] = useState([])
+    const navigate = useNavigate()
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
-        const newPhotos = await getPhotos(search)
-        setAllPhotos(newPhotos)
-    }
-
-    const getPhotos = async (query) => {
-        const response = await fetch(`https://api.unsplash.com/search/photos?query=${query}&per_page=30&client_id=${CLIENT_ID}`)
-        const data = await response.json()
-        return data.results
+        if (firstSearch.trim()) {
+            navigate(`/photos/${search}`)
+        }
     }
 
     useEffect(() => {
@@ -43,10 +39,12 @@ export function Photos() {
                     </span>
                     <form onSubmit={handleSubmit}>
                         <input
-                            type="text"
+                            type="search"
                             className="photos-input"
                             placeholder="Enter your keywords..."
                             autoComplete="off"
+                            spellCheck='false'
+                            required
                             value={search}
                             onChange={(event) => setSearch(event.target.value)}
                         />

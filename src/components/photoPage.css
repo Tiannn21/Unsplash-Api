@@ -3,9 +3,13 @@
     gap: 30px;
     padding: 50px 60px;
     margin: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.date-publish{
+.date-publish {
     font-family: "Be Vietnam Pro", serif;
     font-weight: 200;
     font-style: normal;
@@ -64,6 +68,10 @@
     cursor: pointer;
 }
 
+.photo-buttons a {
+    color: transparent;
+}
+
 .photo-description h3 {
     margin-top: 40px;
     margin-bottom: 10px;
@@ -75,6 +83,7 @@
 
 .item-collection {
     display: flex;
+    justify-content: space-between;
     list-style: none;
     border-radius: 5px;
     gap: 10px;
@@ -83,8 +92,32 @@
     cursor: pointer;
 }
 
+.left-item {
+    display: flex;
+    gap: 10px;
+}
+
+.right-item button {
+    display: none;
+    border: 0;
+    background-color: transparent;
+    font-family: "Be Vietnam Pro", serif;
+    font-weight: 500;
+    font-style: normal;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
 .item-collection:hover {
     background-color: #E5E7EB;
+
+    .right-item button {
+        display: flex;
+    }
 }
 
 .item-collection img {

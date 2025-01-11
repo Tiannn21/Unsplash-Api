@@ -5,14 +5,20 @@ import './photoPage.css'
 
 import { ResponsiveImage } from "./ResponsiveImage";
 import moment from "moment";
+import { AddToCollection } from "./AddToCollection";
+import { ItemCollection } from "./ItemCollection";
 
 export function PhotoPage() {
     const id = useParams().id
     const [photo, setPhoto] = useState()
     const [loading, setLoading] = useState(true)
-    const collections = photo?.related_collections.results
+    const collections = photo?.current_user_collections 
     const dateString = photo?.created_at
-    const formattedDate = moment(dateString).format("MMMM D, YYYY");
+    const formattedDate = moment(dateString).format("MMMM D, YYYY")
+
+    const [isOpen, setIsOpen] = useState(false)
+    const openDialog = () => setIsOpen(true)
+    const closeDialog = () => setIsOpen(false)
 
     useEffect(() => {
         const fetchPhoto = async () => {
@@ -27,9 +33,10 @@ export function PhotoPage() {
     if (loading) return <p>Cargando...</p>
     if (!photo) return <p>No se pudo cargar la foto.</p>
 
-    const handleRemove = ()=>{
-        console.log('Remove img id: '+id)
+    const handleAddToCollection = () =>{
+        openDialog()
     }
+
     return (
         <section className="photo-section">
             <div className="photo-image">
@@ -43,7 +50,7 @@ export function PhotoPage() {
                 <p className="date-publish">Published on {formattedDate}</p>
                 <div className="photo-buttons">
 
-                    <button>
+                    <button onClick={handleAddToCollection}>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.6665 7.33335H8.6665V3.33335C8.6665 3.15654 8.59627 2.98697 8.47124 2.86195C8.34622 2.73693 8.17665 2.66669 7.99984 2.66669C7.82303 2.66669 7.65346 2.73693 7.52843 2.86195C7.40341 2.98697 7.33317 3.15654 7.33317 3.33335V7.33335H3.33317C3.15636 7.33335 2.98679 7.40359 2.86177 7.52862C2.73674 7.65364 2.6665 7.82321 2.6665 8.00002C2.6665 8.17683 2.73674 8.3464 2.86177 8.47142C2.98679 8.59645 3.15636 8.66669 3.33317 8.66669H7.33317V12.6667C7.33317 12.8435 7.40341 13.0131 7.52843 13.1381C7.65346 13.2631 7.82303 13.3334 7.99984 13.3334C8.17665 13.3334 8.34622 13.2631 8.47124 13.1381C8.59627 13.0131 8.6665 12.8435 8.6665 12.6667V8.66669H12.6665C12.8433 8.66669 13.0129 8.59645 13.1379 8.47142C13.2629 8.3464 13.3332 8.17683 13.3332 8.00002C13.3332 7.82321 13.2629 7.65364 13.1379 7.52862C13.0129 7.40359 12.8433 7.33335 12.6665 7.33335Z" fill="#121826" />
                         </svg>Add to Collection
@@ -59,26 +66,19 @@ export function PhotoPage() {
                 </div>
                 <h3>Collections</h3>
                 <ul>
-                    {
+                    {   
+                        
                         collections.map((collection) =>
                             <li key={collection.id} className="item-collection">
-                                <div className="left-item">
-                                    <img src={collection.preview_photos[0].urls.thumb} alt={collection.preview_photos[0].slug} />
-                                    <div className="item-texts">
-                                        <h5>{collection.title}</h5>
-                                        <p>{collection.total_photos} photos</p>
-                                    </div>
-                                </div>
-                                <div className="right-item">
-                                    <button onClick={handleRemove}><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.6665 7.33331H3.33317C3.15636 7.33331 2.98679 7.40355 2.86177 7.52858C2.73674 7.6536 2.6665 7.82317 2.6665 7.99998C2.6665 8.17679 2.73674 8.34636 2.86177 8.47138C2.98679 8.59641 3.15636 8.66665 3.33317 8.66665H12.6665C12.8433 8.66665 13.0129 8.59641 13.1379 8.47138C13.2629 8.34636 13.3332 8.17679 13.3332 7.99998C13.3332 7.82317 13.2629 7.6536 13.1379 7.52858C13.0129 7.40355 12.8433 7.33331 12.6665 7.33331Z" fill="#121826" />
-                                    </svg>Remove</button>
-                                </div>
-                            </li>
-                        )
+                                <ItemCollection collection={collection} modal='false' photoId={id}/>
+                            </li>)
+                        
                     }
                 </ul>
             </article>
+            {
+                isOpen && <AddToCollection closeDialog={closeDialog}/>
+            }
         </section>
     )
 }

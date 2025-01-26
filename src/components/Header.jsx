@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './header.css'
 
 export function Header() {
-    //const path = useLocation()
+    const path = useLocation()
+
 
     return (
         <header>
@@ -13,8 +14,12 @@ export function Header() {
                 </svg>
             </Link>
             <div className='header-buttons'>
-                <button >Home</button>
-                <button style={{ background: 'transparent' }}>Collections</button>
+                <Link to='/'>
+                    <button style={path.pathname === '/' ? {backgroundColor:'#E5E7EB'}:{opacity:'60%'}}>Home</button>
+                </Link>
+                <Link to='/collections'>
+                    <button style={path.pathname === '/collections' ? {backgroundColor:'#E5E7EB'}:{opacity:'60%'}}>Collections</button>
+                </Link>
             </div>
 
         </header>

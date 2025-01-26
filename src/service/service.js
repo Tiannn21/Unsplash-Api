@@ -18,28 +18,3 @@ export const getCollections = async (query) => {
     const data = await response.json()
     return data.results
 }
-
-export const addPhotoToCollection = async (collectionId, photoId) => {
-    const url = `https://api.unsplash.com/collections/${collectionId}/add`;
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Client-ID ${CLIENT_ID}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ photo_id: photoId }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`Error ${response.status}: ${errorData.errors.join(', ')}`);
-      }
-
-      const data = await response.json();
-      return data.id
-    } catch (error) {
-      return "Error al subir foto: "+ error
-    }
-  }

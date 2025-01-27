@@ -13,8 +13,15 @@ export const getPhoto = async (id) => {
     return data
 }
 
-export const getCollections = async (query) => {
-    const response = await fetch(`https://api.unsplash.com/search/collections?query=${query}&per_page=5&client_id=${CLIENT_ID}`)
+export const getCollections = async () => {
+    const response = await fetch(`https://api.unsplash.com/collections?page=4&per_page=9&client_id=${CLIENT_ID}`)
     const data = await response.json()
-    return data.results
+    return data
+}
+
+export const getCollectionPhotos = async (collectionId) => {
+    const response = await fetch(`https://api.unsplash.com/collections/${collectionId}/photos?page=1&per_page=30&client_id=${CLIENT_ID}`)
+    const data = await response.json()
+    console.log(data)
+    return data
 }

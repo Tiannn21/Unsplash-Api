@@ -1,0 +1,6 @@
+.collection-photos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+}

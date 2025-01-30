@@ -1,5 +1,4 @@
 import './collections.css'
-//import collections from '../mocks/collections.json'
 import { getCollections } from '../service/service'
 import { CollectionImage } from './CollectionImage'
 import { useEffect, useState } from 'react'
@@ -19,7 +18,7 @@ export function Collections() {
     }, [])
 
     const handleClickCollection = (collection) => {
-        navigate(`/collections/${collection.title}/${collection.id}`)
+        navigate(`/collections/${collection.title}/${collection.id}/${collection.total_photos}`)
     }
 
     return (

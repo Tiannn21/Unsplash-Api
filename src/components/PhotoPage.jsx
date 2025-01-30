@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPhoto } from "../service/service";
 import { useEffect, useState } from "react";
 import './photoPage.css'
@@ -14,6 +14,7 @@ export function PhotoPage() {
     const collections = photo?.related_collections.results
     const dateString = photo?.created_at
     const formattedDate = moment(dateString).format("MMMM D, YYYY")
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetchPhoto = async () => {
@@ -25,7 +26,12 @@ export function PhotoPage() {
         fetchPhoto()
     }, [id])
 
-    if (loading) return <p>Cargando...</p>
+    const handleClickCollection = (collection) => {
+        navigate(`/collections/${collection.title}/${collection.id}/${collection.total_photos}`)
+    }
+
+
+    if (loading) return <p style={{textAlign:'center'}}>Cargando...</p>
     if (!photo) return <p>No se pudo cargar la foto.</p>
 
     return (
@@ -60,7 +66,7 @@ export function PhotoPage() {
                     {
 
                         collections.map((collection) =>
-                            <li key={collection.id} className="item-collection">
+                            <li key={collection.id} className="item-collection" onClick={()=>handleClickCollection(collection)}>
                                 <ItemCollection collection={collection} />
                             </li>)
 

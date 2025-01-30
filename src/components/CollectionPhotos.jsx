@@ -1,31 +1,27 @@
 import { useParams } from "react-router-dom"
 import './collectionPhotos.css'
-import { useEffect, useState } from "react"
-import { getCollectionPhotos } from "../service/service"
 import { Photos } from "./Photos"
+import { usePhotos } from "../hooks/usePhotos"
 
 
 export function CollectionPhotos() {
     const title = useParams().collectionTitle
     const collectionId = useParams().collectionId
-    const [collectionPhotos, setCollectionPhotos] = useState([])
+    const numberOfPhotos = useParams().totalPhotos
+    const { collectionPhotos, loadMore } = usePhotos({ collectionId })
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const newCollectionPhotos = await getCollectionPhotos(collectionId)
-            setCollectionPhotos(newCollectionPhotos)
-        }
-
-        fetchData()
-    }, [collectionId])
-    
     return (
         <>
             <header className="collection-photos">
                 <h1 className="collections-title">{title}</h1>
-                <p>X photos</p>
+                <p>{numberOfPhotos} photos</p>
             </header>
-            <Photos photos={collectionPhotos} />
+
+            {
+                collectionPhotos.length === 0
+                    ? <p style={{ textAlign: 'center' }}>Coleccion No disponible</p>
+                    : <Photos photos={collectionPhotos} loadMore={loadMore}/>
+            }
         </>
     )
 }

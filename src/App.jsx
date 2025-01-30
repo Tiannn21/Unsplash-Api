@@ -17,7 +17,7 @@ function App() {
         <Route path='/photos/:search' element={<SearchPhotos/>}/>
         <Route path='/photos/:search/:id' element={<PhotoPage/>}/>
         <Route path='/collections' element={<Collections/>}/>
-        <Route path='/collections/:collectionTitle/:collectionId' element={<CollectionPhotos/>}/>
+        <Route path='/collections/:collectionTitle/:collectionId/:totalPhotos' element={<CollectionPhotos/>}/>
       </Routes>
       
     </BrowserRouter>

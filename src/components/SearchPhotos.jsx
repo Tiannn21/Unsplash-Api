@@ -4,17 +4,16 @@ import { Searcher } from './Searcher'
 import { usePhotos } from '../hooks/usePhotos'
 import { Photos } from './Photos'
 
-
 export function SearchPhotos() {
     const search = useParams().search
-    const { photos } = usePhotos({ search })
-    
+    const { photos, loadMore } = usePhotos({ search })
+
     return (
         <>
             <header className="photos-header">
                 <Searcher query={search}></Searcher>
             </header>
-            <Photos photos={photos} search={search}/>
+            <Photos photos={photos} search={search} loadMore={loadMore}/>
         </>
     )
 }

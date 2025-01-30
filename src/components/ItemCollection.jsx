@@ -2,7 +2,7 @@
 
 
 export function ItemCollection({ collection }) {
-
+    
     return (
         <div className="left-item">
             <img src={collection.preview_photos[0].urls.thumb} alt={collection.preview_photos[0].slug} />

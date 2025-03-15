@@ -6,9 +6,16 @@
   width: 100%;
   padding: 0;
   height: 100px;
+  margin-top: 65px;
 }
 .photos {
   margin: 70px 60px;
+}
+
+@media (width < 700px) {
+  .photos {
+    margin: 60px 25px;
+  }
 }
 
 .photos .singular-photo {

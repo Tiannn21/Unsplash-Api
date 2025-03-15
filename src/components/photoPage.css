@@ -1,8 +1,10 @@
 .photo-section {
   display: flex;
+
   gap: 30px;
   padding: 50px 60px;
   margin: 0;
+  margin-top: 60px;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;

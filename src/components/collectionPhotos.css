@@ -1,6 +1,8 @@
-.collection-photos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 0;
+.collection-photos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+  margin-top: 65px;
+  text-align: center;
 }

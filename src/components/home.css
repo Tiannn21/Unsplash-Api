@@ -9,6 +9,7 @@
   background-repeat: repeat;
   background-size: contain;
   gap: 20px;
+  padding-top: 65px;
 }
 
 .home h1 {
@@ -30,7 +31,7 @@
 
 @media (width < 700px) {
   .home {
-    background-image: url(../assets/hero-left.png);
+    background-image: url(../assets/hero-right.png);
     background-repeat: repeat;
   }
   .home h1 {
@@ -42,7 +43,7 @@
 
 @media (700px < width < 900px) {
   .home {
-    background-image: url(../assets/hero-right.png);
+    background-image: url(../assets/hero-left.png);
     background-repeat: repeat;
   }
 }

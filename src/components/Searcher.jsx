@@ -17,7 +17,7 @@ export function Searcher({ query }) {
 
   return (
     <label className={desaign}>
-      <span className="photos-icon">
+      <span className="photos-icon" onClick={handleSubmit}>
         <svg
           width="24"
           height="24"
@@ -36,7 +36,6 @@ export function Searcher({ query }) {
       </span>
       <form onSubmit={handleSubmit}>
         <input
-          type="search"
           className="photos-input"
           placeholder="Enter your keywords..."
           autoComplete="off"

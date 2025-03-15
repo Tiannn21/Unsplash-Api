@@ -1,9 +1,13 @@
-# Unsplash Api
+# 📸 Unsplash Image Search
+Un buscador de imágenes utilizando la API de Unsplash con React.
 
-## Descripción
+## 🌟 Características
+🔍 Búsqueda de imágenes en Unsplash.
+🗂️ Colecciones del momento.
+🎨 Interfaz moderna con React.
 
-Es un sitio web donde puedes buscar cualquier foto que tengas en mente, junto con las colecciones del momento. 
-Link: https://search-unsplashphotos.netlify.app/
+🚀 Demo
+https://search-unsplashphotos.netlify.app/
 
 ## Instalación
 
@@ -11,18 +15,15 @@ Link: https://search-unsplashphotos.netlify.app/
 
    ```bash
    git clone https://github.com/Tiannn21/Unsplash-Api.git
+   cd Unsplash-Api
 
-2. Ve al directorio del proyecto:
 
-   ```bash
-   cd /Unsplash-Api
-
-3. Instala las dependencias:
+2. Instala las dependencias:
    
    ```bash
    npm install
 
-4. Inicia el servidor:
+3. Inicia el servidor:
 
    ```bash
    npm run dev

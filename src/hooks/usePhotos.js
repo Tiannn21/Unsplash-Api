@@ -43,7 +43,6 @@ export function usePhotos({ search, collectionId }) {
 
   const loadMore = () => {
     setPage(page + 1);
-    console.log(page);
   };
 
   return { photos, loadMore, collectionPhotos };

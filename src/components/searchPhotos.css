@@ -1,26 +1,29 @@
 .photos-header {
-    display: flex;
-    background-image: url(../assets/gradiend-bg@2x.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    padding: 0;
-    height: 100px;
+  display: flex;
+  background-image: url(../assets/gradiend-bg@2x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 0;
+  height: 100px;
 }
-.photos{
-    columns: 4;
-    gap: 30px;
-    margin: 70px 60px;
+.photos {
+  margin: 70px 60px;
 }
 
-.photos .singular-photo{
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 25px;
-    cursor: pointer;
+.photos .singular-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
 }
 
-.photos .singular-photo:hover{
-    filter: brightness(90%);
+.singular-photo[data-height] {
+  --rows: calc(var(--height) / 10);
+}
+
+.photos .singular-photo:hover {
+  filter: brightness(90%);
 }

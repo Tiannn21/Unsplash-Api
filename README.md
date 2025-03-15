@@ -2,11 +2,11 @@
 Un buscador de imágenes utilizando la API de Unsplash con React.
 
 ## 🌟 Características
-🔍 Búsqueda de imágenes en Unsplash.
-🗂️ Colecciones del momento.
-🎨 Interfaz moderna con React.
+#### 🔍 Búsqueda de imágenes en Unsplash.
+#### 🗂️ Colecciones del momento.
+#### 🎨 Interfaz moderna con React.
 
-🚀 Demo
+## 🚀 Demo
 https://search-unsplashphotos.netlify.app/
 
 ## Instalación

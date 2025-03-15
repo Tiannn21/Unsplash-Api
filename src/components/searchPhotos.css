@@ -20,10 +20,6 @@
   object-fit: cover;
 }
 
-.singular-photo[data-height] {
-  --rows: calc(var(--height) / 10);
-}
-
 .photos .singular-photo:hover {
   filter: brightness(90%);
 }

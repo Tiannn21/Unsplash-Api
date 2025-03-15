@@ -11,7 +11,7 @@ export function Photos({ photos, search, loadMore }) {
   return (
     <InfiniteScroll dataLength={photos.length} next={loadMore} hasMore={true}>
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1366: 4 }}
+        columnsCountBreakPoints={{ 350: 1, 700: 2, 900: 3, 1366: 4 }}
         className="photos"
       >
         <Masonry>

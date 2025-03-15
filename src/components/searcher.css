@@ -1,30 +1,99 @@
 .photos-label {
-    position: relative;
-    display: block;
-    width: 600px;
-    display: flex;
-    border-radius: 8px;
-    border: 2px solid #E5E7EB;
-    box-shadow: 0 0 5px 1px #E5E7EB;
-    padding: 20px 8px 20px 10px;
-    text-align: left;
-    background-color: white;
-  
-    .photos-icon {
-      position: absolute;
-      top: 53%;
-      right: 0;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-      color: #c5c5c5;
+  position: relative;
+  width: 600px;
+  display: flex;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 0 5px 1px #e5e7eb;
+  padding: 20px 8px 20px 10px;
+  text-align: left;
+  background-color: white;
+
+  .photos-icon {
+    position: absolute;
+    top: 53%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    color: #c5c5c5;
+  }
+
+  .photos-input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    width: 560px;
+  }
+}
+
+.photos-label-searching {
+  position: absolute;
+  top: 18%;
+  left: 30%;
+  width: 600px;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 0 5px 1px #e5e7eb;
+  padding: 20px 8px 20px 10px;
+  text-align: left;
+  background-color: white;
+
+  .photos-icon {
+    position: absolute;
+    top: 53%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    color: #c5c5c5;
+  }
+
+  .photos-input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    width: 560px;
+  }
+}
+
+@media (width < 700px) {
+  .photos-label-searching {
+    position: absolute;
+    top: 16%;
+    left: 9%;
+    width: 300px;
+
+    .photos-input {
+      width: 260px;
     }
-  
+  }
+
+  .photos-label {
+    width: 300px;
+
     .photos-input {
       background-color: transparent;
       outline: none;
       border: none;
       color: black;
       font-size: 16px;
-      width: 560px;
+      width: 260px;
     }
   }
+}
+
+@media (700px < width < 900px) {
+  .photos-label-searching {
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    width: 500px;
+
+    .photos-input {
+      width: 460px;
+    }
+  }
+}

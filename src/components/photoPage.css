@@ -1,146 +1,148 @@
 .photo-section {
-    display: flex;
-    gap: 30px;
-    padding: 50px 60px;
-    margin: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: flex;
+  gap: 30px;
+  padding: 50px 60px;
+  margin: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@media (max-width: 750px) {
+  .photo-section {
+    flex-direction: column;
+  }
 }
 
 .date-publish {
-    font-family: "Be Vietnam Pro", serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 10px;
-    margin: 20px 0;
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10px;
+  margin: 20px 0;
 }
 
 .photo-section .photo-image {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    background-color: #E5E7EB;
-    border-radius: 5px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background-color: #e5e7eb;
+  border-radius: 5px;
 }
 
 .photo-section .photo-image img {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .photo-section .photo-description {
-    flex: 1;
+  flex: 1;
 }
 
 .photo-user {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .photo-user img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .photo-user p {
-    margin: 0;
+  margin: 0;
 }
 
 .photo-buttons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .photo-buttons button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: "Be Vietnam Pro", serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 14px;
-    border: 0;
-    border-radius: 5px;
-    background-color: #E5E7EB;
-    padding: 10px 30px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #e5e7eb;
+  padding: 10px 30px;
+  cursor: pointer;
 }
 
 .photo-buttons a {
-    color: transparent;
+  color: transparent;
 }
 
 .photo-description h3 {
-    margin-top: 40px;
-    margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 
 .photo-buttons button:hover {
-    filter: brightness(95%);
+  filter: brightness(95%);
 }
 
 .item-collection {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    border-radius: 5px;
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 5px;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  border-radius: 5px;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .left-item {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .right-item button {
-    display: none;
-    border: 0;
-    background-color: transparent;
-    font-family: "Be Vietnam Pro", serif;
-    font-weight: 500;
-    font-style: normal;
-    align-items: center;
-    height: 100%;
-    gap: 10px;
-    cursor: pointer;
+  display: none;
+  border: 0;
+  background-color: transparent;
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 500;
+  font-style: normal;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+  cursor: pointer;
 }
 
-
-
 .item-collection:hover {
-    background-color: #E5E7EB;
+  background-color: #e5e7eb;
 
-    .right-item button {
-        display: flex;
-    }
+  .right-item button {
+    display: flex;
+  }
 }
 
 .item-collection img {
-    width: 60px;
-    height: 60px;
-    border-radius: 3px;
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
 }
 
 .item-collection p {
-    font-family: "Be Vietnam Pro", serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 10px;
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10px;
 }
 
 .item-texts {
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .item-texts h5,
 .item-texts p {
-    margin: 0;
+  margin: 0;
 }

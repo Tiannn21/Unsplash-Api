@@ -7,7 +7,7 @@ Un buscador de imágenes utilizando la API de Unsplash con React.
 #### 🎨 Interfaz moderna con React.
 
 ## 🚀 Demo
-Procura buscar imagenes con palabras en ingles
+Procura buscar imagenes con palabras en ingles. 
 https://search-unsplashphotos.netlify.app/
 
 ## Instalación
